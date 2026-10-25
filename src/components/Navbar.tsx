@@ -5,7 +5,7 @@
 import React, { useState } from 'react';
 import {
   Bell, MessageSquare, Globe, Sun, Moon,
-  Smartphone, Monitor, DollarSign, Shield, Code, ChevronDown, Check, User
+  Smartphone, Monitor, DollarSign, Shield, Code, ChevronDown, Check, User, Download
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 
@@ -15,6 +15,7 @@ export const Navbar: React.FC = () => {
     theme, setTheme, deviceMode, setDeviceMode,
     activeTab, setActiveTab, notifications, conversations,
     setIsSettingsModalOpen, setIsApiDocsModalOpen, setIsLiveModalOpen,
+    setIsApkModalOpen,
     t
   } = useApp();
 
@@ -160,6 +161,17 @@ export const Navbar: React.FC = () => {
             title="Toggle Theme"
           >
             {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+          </button>
+
+          {/* Download APK / Install Button */}
+          <button
+            onClick={() => setIsApkModalOpen(true)}
+            className="flex items-center gap-1.5 px-2.5 py-1 text-xs font-semibold rounded-md bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700 text-white shadow-sm transition-all cursor-pointer whitespace-nowrap"
+            title="Download Android APK / Install App"
+          >
+            <Download className="w-3.5 h-3.5" />
+            <span className="hidden sm:inline">Download APK</span>
+            <span className="sm:hidden">APK</span>
           </button>
 
           {/* API Docs & Tech Architecture */}

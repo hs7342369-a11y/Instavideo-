@@ -22,6 +22,7 @@ import { LiveStreamModal } from './components/LiveStreamModal';
 import { SettingsModal } from './components/SettingsModal';
 import { AuthModal } from './components/AuthModal';
 import { ApiDocsModal } from './components/ApiDocsModal';
+import { ApkDownloadModal } from './components/ApkDownloadModal';
 import { Wifi, BatteryMedium, Signal, Smartphone, Monitor } from 'lucide-react';
 
 const MainLayout: React.FC = () => {
@@ -101,6 +102,7 @@ const MainLayout: React.FC = () => {
       <SettingsModal />
       <AuthModal />
       <ApiDocsModal />
+      <ApkDownloadModal />
     </div>
   );
 };

@@ -38,6 +38,7 @@ interface AppContextType {
   isAuthModalOpen: boolean;
   isSettingsModalOpen: boolean;
   isApiDocsModalOpen: boolean;
+  isApkModalOpen: boolean;
   isCreateModalOpen: boolean;
   createModalType: 'post' | 'reel' | 'story';
   blockedUserIds: string[];
@@ -54,6 +55,7 @@ interface AppContextType {
   setIsAuthModalOpen: (open: boolean) => void;
   setIsSettingsModalOpen: (open: boolean) => void;
   setIsApiDocsModalOpen: (open: boolean) => void;
+  setIsApkModalOpen: (open: boolean) => void;
   openCreateModal: (type: 'post' | 'reel' | 'story') => void;
   closeCreateModal: () => void;
 
@@ -124,6 +126,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
   const [isAuthModalOpen, setIsAuthModalOpen] = useState<boolean>(false);
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState<boolean>(false);
   const [isApiDocsModalOpen, setIsApiDocsModalOpen] = useState<boolean>(false);
+  const [isApkModalOpen, setIsApkModalOpen] = useState<boolean>(false);
   const [isCreateModalOpen, setIsCreateModalOpen] = useState<boolean>(false);
   const [createModalType, setCreateModalType] = useState<'post' | 'reel' | 'story'>('post');
 
@@ -648,6 +651,8 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
         setIsAuthModalOpen,
         setIsSettingsModalOpen,
         setIsApiDocsModalOpen,
+        isApkModalOpen,
+        setIsApkModalOpen,
         openCreateModal,
         closeCreateModal,
         likePost,

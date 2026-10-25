@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f43f5e" />
+      <stop offset="50%" stop-color="#ec4899" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#f43f5e" flood-opacity="0.3" />
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="128" fill="#09090b" />
+  <rect x="56" y="56" width="400" height="400" rx="96" fill="url(#grad)" filter="url(#shadow)" />
+  <!-- Camera Shutter Ring -->
+  <circle cx="256" cy="256" r="140" fill="none" stroke="#ffffff" stroke-width="20" opacity="0.3" />
+  <!-- Center Play Button Triangle -->
+  <polygon points="220,186 332,256 220,326" fill="#ffffff" />
+</svg>

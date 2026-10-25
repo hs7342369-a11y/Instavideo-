@@ -14,7 +14,7 @@ export const SettingsModal: React.FC = () => {
   const {
     isSettingsModalOpen, setIsSettingsModalOpen, currentUser,
     updateCurrentUserProfile, language, setLanguage,
-    blockedUserIds, unblockUser, t
+    blockedUserIds, unblockUser, setIsApkModalOpen, t
   } = useApp();
 
   const [activeSection, setActiveSection] = useState<'privacy' | 'security' | 'blocked' | 'guidelines' | 'data'>('privacy');
@@ -218,6 +218,26 @@ export const SettingsModal: React.FC = () => {
         {/* Section 5: Data & Account */}
         {activeSection === 'data' && (
           <div className="space-y-3 text-xs">
+            {/* Download Android APK Option */}
+            <div className="p-3.5 rounded-2xl bg-gradient-to-r from-rose-950/30 to-zinc-950 border border-rose-500/30 space-y-2">
+              <p className="font-bold text-white flex items-center gap-1.5">
+                <Download className="w-4 h-4 text-rose-400" />
+                Download Android APK File (v1.0.0)
+              </p>
+              <p className="text-[11px] text-zinc-400">
+                Install Instavideo as a standalone Android app with full native permissions, push notifications, and high-framerate video reels.
+              </p>
+              <button
+                onClick={() => {
+                  setIsSettingsModalOpen(false);
+                  setIsApkModalOpen(true);
+                }}
+                className="px-4 py-2 bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700 text-white rounded-xl font-bold cursor-pointer"
+              >
+                Open APK Download Center →
+              </button>
+            </div>
+
             <div className="p-3.5 rounded-2xl bg-zinc-950 border border-zinc-800 space-y-2">
               <p className="font-bold text-white flex items-center gap-1.5">
                 <Download className="w-4 h-4 text-blue-400" />
