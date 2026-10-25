@@ -1,0 +1,7 @@
+{
+  "name": "Instavideo",
+  "description": "Modern advanced social media platform combining photo sharing, short video reels, creator channels, live streaming, real-time messaging, and creator monetization.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
